@@ -1,0 +1,151 @@
+#customers {
+    border-collapse: collapse;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    width: 100%;
+}
+#customers td, #customers th {
+    border: 1px solid #98bf21;
+    font-size: 1.2em;
+    padding: 3px 7px 2px;
+}
+#customers th {
+    background-color: red;
+    color: #fff;
+    font-size: 1.4em;
+    padding-bottom: 4px;
+    padding-top: 5px;
+    text-align: left;
+}
+#customers tr.alt td {
+    background-color: #eaf2d3;
+    color: #000;
+}
+#header {
+background-color: #ffffff;
+padding: 0;
+margin: 0 0 10px 0;
+}
+.fullWidth {
+margin: auto;
+padding: 10px 0;
+}
+.notFullWidth {
+margin: 0 50px;
+}
+.shadowed {
+border-bottom: 1px solid #E1E1E1;
+-webkit-box-shadow: 0px 1px 5px #DADADA;
+-moz-box-shadow: 0px 1px 5px #DADADA;
+-o-box-shadow: 0px 1px 5px #DADADA;
+box-shadow: 0px 1px 5px #DADADA;
+}
+#headerlogo a {
+text-decoration: none;
+color: #282828; /*position:absolute;*/
+float: left;
+padding: 5px;
+}
+
+#headerlinks {
+float: right;
+text-align: right;
+position: relative;
+top: 50px;
+}
+
+#slogan {
+display: inline-block;
+padding-left: 15px;
+font-size: 15px;
+line-height: 15px;
+top: 50px;
+position: relative;
+float: left;
+color: #000000;
+}
+.footer {
+padding: 10px;
+}
+.footer ul {
+text-align: center;
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.footer li {
+display: inline;
+}
+body {
+	font-family: "Georgia", serif;
+	line-height: 1.8em;
+	color: #333;
+}
+.infoboxwrapper {
+position: relative;
+margin-bottom: 20px;
+background: #f2f2f2;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+margin: 0 5px 0 5px;
+}
+.infobox {
+width: 256px;
+padding: 20px;
+text-align: center;
+}
+.infobox h3 {
+margin: 0;
+line-height: 30px;
+margin-bottom: 10px;
+font-size: 24px;
+}
+.infobox span {
+color: #bdc3c7;
+display: block;
+font-size: 120px;
+line-height: normal;
+margin: 10px 0;
+}
+
+#wrap {
+	width: 57em;
+	background-color: red;
+}
+
+textarea, .result div {
+	font-size: .8em;
+	width: 500px;
+	height: 230px;
+	margin: 1em 2em 2em 2em;
+	padding: 1em;
+}
+
+textarea {
+	font-family: Courier, fixed;
+}
+
+.template, .html, .data, .result {
+	float: left;
+}
+
+.result div {
+	border: 1px solid #333;
+}
+
+h3 {display block;
+	margin: 2em 0 0 1.5em;
+}
+
+.process {
+	display: block;
+	clear: both;
+	margin: 1em 0;
+	width: 56em;
+	text-align: center;
+}
+
+button {
+	font-size: 1.5em;
+	margin-top: 1em;
+}

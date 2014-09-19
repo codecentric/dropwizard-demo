@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	<changeSet id="1" author="fema">
+		<createTable tableName="customer">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="fullName" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="name" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="jobTitle" type="varchar(255)" />
+		</createTable>
+		<createTable tableName="address">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="street" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="city" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="zip" type="varchar(255)" />
+			<column name="customer_id" type="bigint">
+				<constraints foreignKeyName="customer_id_fk" references="customer(id)"
+					nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet id="2" author="Hans">
+		<insert tableName="customer">
+		<column name="fullName" value="Hans Maier"/>
+		<column name="name" value="Maier"/>
+		<column name="jobTitle" value="Berater" />
+		</insert>
+		<insert tableName="customer">
+		<column name="fullName" value="Hubert Harry"/>
+		<column name="name" value="Harry"/>
+		<column name="jobTitle" value="Berater" />
+		</insert>
+		<insert tableName="customer">
+		<column name="fullName" value="Chef Kaiser"/>
+		<column name="name" value="Kaiser"/>
+		<column name="jobTitle" value="Chefe" />
+		</insert>
+	</changeSet>
+</databaseChangeLog>

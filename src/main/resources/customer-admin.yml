@@ -1,0 +1,19 @@
+database:
+  driverClass: org.h2.Driver
+  user: sa
+  password: sa
+  url: jdbc:h2:./target/example
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 8080
+logging:
+  level: INFO
+  loggers:
+    de.cc.dropwizard: DEBUG
+    org.hibernate.SQL: ALL
+  appenders:
+    - type: console

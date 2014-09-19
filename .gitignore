@@ -1,0 +1,11 @@
+.project
+.classpath
+.settings
+.idea
+.cache
+.worksheet
+*.iml
+target
+test-output
+*.readme.md.html
+.eclipse-pmd

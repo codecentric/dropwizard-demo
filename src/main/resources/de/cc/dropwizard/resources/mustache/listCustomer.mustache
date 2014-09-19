@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+  <title>A Simple Kundenverwaltung Demo</title>
+  <meta charset="utf-8">
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+ 
+  <h1>A Simple Kundenverwaltungs Demo</h1>
+ 
+  <div id="wrap">
+    <div class="template">
+      <h3>Kundenverwaltung Template:</h3>
+      <div id="customers">        
+ 		<table>
+	        <thead>
+	        	<th>Full Name</th>
+	            <th>Name</th>
+	            <th>Job Title</th>
+	            <th>ID</th>
+	        </thead>
+	        <tbody>
+	        {{#customers}}
+	            <tr>
+					<td>{{fullName}}</td>
+	                <td>{{name}}</td>
+	                <td>{{jobTitle}}</td>
+	                <td>{{id}}</td>
+	            </tr>
+	        {{/customers}}
+	        </tbody>
+      	</table>
+      </div>
+ 
+    </div>
+  </div>
+ 
+</body>
+</html>
