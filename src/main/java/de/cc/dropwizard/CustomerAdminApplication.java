@@ -1,6 +1,7 @@
 package de.cc.dropwizard;
 
 import de.cc.dropwizard.dao.CustomerDAO;
+import de.cc.dropwizard.health.DatabaseHealthCheck;
 import de.cc.dropwizard.pojo.Customer;
 import de.cc.dropwizard.resources.CustomerResource;
 import de.cc.dropwizard.resources.ViewResource;
@@ -14,7 +15,7 @@ import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
 
 /**
- * Hello world!
+ * Customer administration Micro Service
  *
  */
 public class CustomerAdminApplication extends Application<CustomerAdminConfiguration>
@@ -51,10 +52,8 @@ public class CustomerAdminApplication extends Application<CustomerAdminConfigura
 		final CustomerDAO customerDAO = new CustomerDAO(
 				hibernateBundle.getSessionFactory());
 		environment.jersey().setUrlPattern("/service/*");
-//		environment.healthChecks().register("template",
-//				new TemplateHealthCheck(template));
-//		environment.healthChecks().register("database",
-//				new DatabaseHealthCheck(configuration.getDataSourceFactory()));
+		environment.healthChecks().register("database",
+				new DatabaseHealthCheck(hibernateBundle));
 
 		environment.jersey().register(new ViewResource(customerDAO));
 		environment.jersey().register(new CustomerResource(customerDAO));
