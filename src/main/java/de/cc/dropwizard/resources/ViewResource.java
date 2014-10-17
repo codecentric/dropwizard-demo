@@ -31,7 +31,7 @@ public class ViewResource {
 	@Path("/customer/{customerId}/view_mustache")
 	@UnitOfWork
 	@Produces(MediaType.TEXT_HTML)
-	public CustomerView getCustomerViewMustache(
+	public View getCustomerViewMustache(
 			@PathParam("customerId") LongParam customerId) {
 		return new CustomerView(CustomerView.Template.MUSTACHE,
 				findSafely(customerId.get()));
@@ -43,8 +43,7 @@ public class ViewResource {
 	@Produces(MediaType.TEXT_HTML)
 	public View getCustomerView() {
 		return new ListCustomerView(ListCustomerView.Template.MUSTACHE,
-				findAllSafely()) {
-		};
+				findAllSafely());
 	}
 
 	private List<Customer> findAllSafely() {
