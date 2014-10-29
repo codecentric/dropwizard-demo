@@ -4,16 +4,14 @@ import com.google.common.base.Optional;
 import com.sun.jersey.api.NotFoundException;
 import de.cc.dropwizard.dao.CustomerDAO;
 import de.cc.dropwizard.pojo.Customer;
+import de.cc.dropwizard.view.CreateCustomerView;
 import de.cc.dropwizard.view.CustomerView;
 import de.cc.dropwizard.view.ListCustomerView;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.params.LongParam;
 import io.dropwizard.views.View;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -44,6 +42,19 @@ public class ViewResource {
 	public View getCustomerView() {
 		return new ListCustomerView(ListCustomerView.Template.MUSTACHE,
 				findAllSafely());
+	}
+
+	@GET
+	@Path("/customer/create_mustache")
+	@UnitOfWork
+	@Produces(MediaType.TEXT_HTML)
+	public View getCreateCustomerView() {
+		return new CreateCustomerView(CreateCustomerView.Template.MUSTACHE,
+				createSafely());
+	}
+
+	private Customer createSafely() {
+		return new Customer();
 	}
 
 	private List<Customer> findAllSafely() {

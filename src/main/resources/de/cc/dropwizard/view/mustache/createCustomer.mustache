@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <div id="header">
+  <head>
+	  <title>A Simple Kundenverwaltung Demo</title>
+	  <meta charset="utf-8">
+	  <!-- Styles -->
+	  <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+  </head>
+  </div>
+<div id="">
+<body>
+
+  <h1>A Simple Kundenverwaltungs Demo</h1>
+
+      <h3>Kundenverwaltung Create Template:</h3>
+
+      <form>
+            <ul>
+                <li><label>Kunden Info: <input type="text" name="fullName" value={{customer.fullName}}/></label></li>
+                <li><label>Name: <input type="text" name="name" value={{customer.name}}></label></li>
+                <li><label>Customer Job Title:<input type="text" name="fullName" value={{customer.jobTitle}}></label></li>
+                <li><input type='submit' value={{#createCustomer}}customer{{/createCustomer}} /></li>
+            </ul>
+      </form>
+</body>
+</div>
+</html>
