@@ -51,6 +51,7 @@ public class CustomerAdminApplication extends Application<CustomerAdminConfigura
 	public void run(CustomerAdminConfiguration customerAdminConfiguration, Environment environment) throws Exception {
 		final CustomerDAO customerDAO = new CustomerDAO(
 				hibernateBundle.getSessionFactory());
+
 		environment.jersey().setUrlPattern("/service/*");
 		environment.healthChecks().register("database",
 				new DatabaseHealthCheck(hibernateBundle));

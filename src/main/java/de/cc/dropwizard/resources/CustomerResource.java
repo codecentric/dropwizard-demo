@@ -1,5 +1,6 @@
 package de.cc.dropwizard.resources;
 
+import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.Optional;
 import com.sun.jersey.api.NotFoundException;
 import de.cc.dropwizard.dao.CustomerDAO;
@@ -34,6 +35,7 @@ public class CustomerResource {
 	@GET
 	@UnitOfWork
 	@Produces(MediaType.APPLICATION_JSON)
+	@Timed
 	public List<Customer> listCustomer() {
 		return customerDAO.findAll();
 	}
@@ -42,6 +44,7 @@ public class CustomerResource {
 	@GET
 	@UnitOfWork
 	@Produces(MediaType.APPLICATION_JSON)
+	@Timed
 	public Customer getPerson(@PathParam("customerId") LongParam customerId) {
 		return findSafely(customerId.get());
 	}
